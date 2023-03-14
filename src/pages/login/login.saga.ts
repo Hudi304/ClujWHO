@@ -11,7 +11,6 @@ export function loginFC(payload: any): void {
   axios
     .post(`${URL}/login`, account)
     .then(res => {
-      // console.log('Login status:', res.statusText);
       if (res.statusText == 'Logged in') {
         history.push('./account')
         alert('Successful Login')

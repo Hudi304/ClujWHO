@@ -7,40 +7,39 @@ import './account.scss'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { LoginData } from '../login/login.types'
-import { useHistory } from 'react-router-dom'
-import { saveChanges } from "./account.actions"
+import { saveChanges } from './account.actions'
 
 function Account(props: any): JSX.Element {
-    const history = useHistory()
 
-    function handleClick() {
-        console.log('handle Click ACC')
-        // props.getMovieListAct();
-        const user: LoginData = {
-            username: 'Itachi',
-            password: '1234'
-        }
-        props.saveChanges(user, history)
+  function handleClick() {
+    // props.getMovieListAct();
+    const user: LoginData = {
+      username: 'Itachi',
+      password: '1234'
     }
+  }
 
-    return (
-        <div className="profile-grid-container">
-            <AccountHeader></AccountHeader>
-            <AccountMenu></AccountMenu>
-            <AccountBody></AccountBody>
+  return (
+    <div className="profile-grid-container">
+      <AccountHeader></AccountHeader>
+      <AccountMenu></AccountMenu>
+      <AccountBody></AccountBody>
 
-            <button onClick={handleClick}>+</button>
-        </div>
-    )
+      <button onClick={handleClick}>+</button>
+    </div>
+  )
 }
 
 const mapStateToProps = (state: any) => ({
-    ...state
+  ...state
 })
 
 const mapDispatchToProps = (dispatch: any) => ({
-    dispatch,
-    ...bindActionCreators({ saveChanges }, dispatch) //? astea sunt ACTIONS
+  dispatch,
+  ...bindActionCreators({ saveChanges }, dispatch) //? astea sunt ACTIONS
 })
 
-export const UserProfilePage = connect(mapStateToProps, mapDispatchToProps)(Account)
+export const UserProfilePage = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Account)

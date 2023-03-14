@@ -9,7 +9,7 @@
   transition-timing-function: ease-out;
   background-color: #1a202c;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+  z-index: 2;
   .nav-bar-container-grid {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -110,9 +110,7 @@
   top: 0px;
 }
 
-.debug {
-  border: 1px solid black;
-}
+
 
 .toggle-drawer-btn {
   width: 5vh;
@@ -128,7 +126,7 @@
   overflow: visible;
 
   .menu-btn-list {
-    background-color: #4a5568;
+    background-color: #253551;
     height: 100vh;
     display: flex;
     align-items: flex-start;
@@ -137,7 +135,7 @@
     gap: 1vh;
     padding: 1vh;
     .menu-list-item {
-      background-color: #2d3848;
+      background-color: #1a202c;
       border-radius: 1vh;
       width: 100%;
       height: 7vh;

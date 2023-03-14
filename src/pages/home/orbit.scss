@@ -1,0 +1,82 @@
+.orbitRotation {
+  width: 50vh;
+  animation: rotation 10s linear  infinite;
+  z-index: 0;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-cls-1,
+.orbit-cls-5,
+.orbit-cls-8 {
+  fill: none;
+}
+
+.orbit-cls-1 {
+  stroke: #085dad;
+  stroke-width: 2px;
+}
+
+.orbit-cls-1,
+.orbit-cls-8,
+.orbit-cls-9 {
+  stroke-miterlimit: 10;
+}
+
+.orbit-cls-2,
+.orbit-cls-7 {
+  fill: #eecae2;
+}
+
+.orbit-cls-3,
+.orbit-cls-4,
+.orbit-cls-6,
+.orbit-cls-9 {
+  fill: #73c2eb;
+}
+
+.orbit-cls-3 {
+  opacity: 0.99;
+}
+
+.orbit-cls-5 {
+  stroke: #eecae2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0;
+}
+
+.orbit-cls-6,
+.orbit-cls-7 {
+  opacity: 0.9;
+}
+
+.orbit-cls-8,
+.orbit-cls-9 {
+  stroke: #73c2eb;
+}
+
+.orbit-cls-9 {
+  opacity: 0.8;
+}
+
+.orbit-cls-10,
+.orbit-cls-11 {
+  fill: #fff;
+}
+
+.orbit-cls-10 {
+  opacity: 0.52;
+}
+
+.orbit-cls-11 {
+  opacity: 0.64;
+}

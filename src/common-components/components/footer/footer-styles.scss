@@ -1,0 +1,100 @@
+.footer-grid {
+  display: grid;
+  grid-template-rows: auto auto;
+
+  .footer-waves-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100vw;
+  }
+
+  .footer {
+    grid-column: 1;
+    grid-row: 7;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    padding-bottom: 2vw;
+
+    .footer-waves-container {
+      width: 100vw;
+    }
+
+    .facebook-insta-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5vw;
+
+      .facebook-icon-container {
+        width: 10vw;
+        height: 10vw;
+        background-color: aliceblue;
+        z-index: 7;
+
+        .anchor {
+          z-index: 7;
+          width: 10vw;
+          height: 10vw;
+
+          .anchor-button {
+            width: 10vw;
+            height: 10vw;
+            border: none;
+            padding: 0;
+          }
+        }
+      }
+
+      .instagram-icon-container {
+        width: 10vw;
+        height: 10vw;
+        z-index: 8;
+
+        .anchor-insta {
+          z-index: 8;
+          width: 10vw;
+          height: 10vw;
+
+          .anchor-button-insta {
+            width: 10vw;
+            height: 10vw;
+            border: none;
+            padding: 0;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    .email-container {
+      display: flex;
+      justify-content: center;
+      gap: 2vw;
+
+      .email-icon-container {
+        width: 10vw;
+        height: 10vw;
+      }
+
+      .email {
+        padding: 0;
+        margin: 0;
+        color: #17a0df;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .osm-logo-container {
+      width: 50vw;
+
+      .osm-logo {
+        width: 50vw;
+      }
+    }
+  }
+}

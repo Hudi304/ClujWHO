@@ -1,0 +1,102 @@
+.countDownContainerMobile {
+  filter: drop-shadow(1vw 1vw 1vw rgb(43, 43, 43));
+
+  .counterContainerMobile {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto 2vw auto 2vw auto 2vw auto 2vw auto;
+    background-color: rgb(173, 216, 230);
+    border-radius: 3vw;
+    // width: 95vw;
+    width: 95%;
+    padding: 1vw;
+
+    .cardContainerMobile {
+      margin-top: 1vh;
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+      // border: 1px solid black;
+
+      .counterCardMobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #72c2eb;
+        border-radius: 1vw;
+        width: 15vw;
+        height: 15vw;
+        font-size: 10vw;
+        font-weight: 600;
+        color: white;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cardLabelMobile {
+        color: white;
+        font-size: 3.4vw;
+        margin-top: 0.1vh;
+        margin-bottom: 0.1vh;
+      }
+    }
+
+    .pointsMobile {
+      font-size: 10vw;
+      color: white;
+      margin-bottom: 2vh;
+      font-weight: 600;
+    }
+  }
+}
+
+// .countDownContainerMobile {
+//   filter: drop-shadow(1vw 1vw 1vw rgb(43, 43, 43));
+
+//   .counterContainerMobile {
+//     display: grid;
+//     grid-template-rows: auto;
+//     grid-template-columns: auto 2vw auto 2vw auto 2vw auto 2vw auto;
+//     background-color: rgb(173, 216, 230);
+//     border-radius: 3vw;
+//     width: 95vw;
+//     padding: 1vw;
+
+//     .cardContainerMobile {
+//       margin-top: 1vh;
+//       display: grid;
+//       grid-template-columns: auto;
+//       grid-template-rows: auto auto;
+//       // border: 1px solid black;
+
+//       .counterCardMobile {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         background-color: #72c2eb;
+//         border-radius: 1vw;
+//         width: 15vw;
+//         height: 15vw;
+//         font-size: 10vw;
+//         font-weight: 600;
+//         color: white;
+//         margin-left: auto;
+//         margin-right: auto;
+//       }
+
+//       .cardLabelMobile {
+//         color: white;
+//         font-size: 3.4vw;
+//         margin-top: 0.1vh;
+//         margin-bottom: 0.1vh;
+//       }
+//     }
+
+//     .pointsMobile {
+//       font-size: 10vw;
+//       color: white;
+//       margin-bottom: 2vh;
+//       font-weight: 600;
+//     }
+//   }
+// }

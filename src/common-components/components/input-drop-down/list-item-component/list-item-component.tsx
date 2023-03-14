@@ -16,9 +16,7 @@ export default function ListItem(props: ListItemProps): JSX.Element {
 }
 
 function onCLick(parentID: string, content: string) : void {
-  console.log(parentID);
   const input = document.getElementById(parentID);
-  console.log(input);
   input?.setAttribute('value', content);
   // input?.se
   // document.getElementById(parentID)?.getElementsByTagName("input")[0]?.value = "content"

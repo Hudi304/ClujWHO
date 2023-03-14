@@ -1,43 +1,47 @@
-import { ProfilePic } from './account-profile-pic/account-profile-pic';
-import './account-profile-form.componet.scss';
-import backgroudImage from '../../../../assets/shifaaz-shamoon-okVXy9tG3KY-unsplash.jpg';
-import profilePicture from '../../../../assets/amonfUS.png';
-import FormDropDownItem from '../../../../common-components/components/input-drop-down/input-drop-down';
-import { TextBox } from '../../../../common-components/components/text-box/text-box';
-import { useState } from 'react';
-import { cities, states, countries } from '../../../../constants/dummyData';
-import { FormObj, fromObjInit } from '../../account.types';
-import { bindActionCreators } from '@reduxjs/toolkit';
+import { ProfilePic } from './account-profile-pic/account-profile-pic'
+import './account-profile-form.componet.scss'
+import backgroudImage from '../../../../assets/shifaaz-shamoon-okVXy9tG3KY-unsplash.jpg'
+import profilePicture from '../../../../assets/amonfUS.png'
+import FormDropDownItem from '../../../../common-components/components/input-drop-down/input-drop-down'
+import { TextBox } from '../../../../common-components/components/text-box/text-box'
+import { useState } from 'react'
+import { cities, states, countries } from '../../../../constants/dummyData'
+import { FormObj, fromObjInit } from '../../account.types'
+import { bindActionCreators } from '@reduxjs/toolkit'
 import { connect } from 'react-redux'
 
-import { saveChanges } from '../../account.actions';
+import { saveChanges } from '../../account.actions'
 
+//! Nu mai folosidefault export
 
-//! Nu mai folosidefault export 
+function AccountBodyComponent(props: any): JSX.Element {
+  const [fromObj, setFromObj] = useState<FormObj>(fromObjInit)
 
-function AccountBodyComponent(props : any): JSX.Element {
-  // console.log(props)
-
-  const [fromObj, setFromObj] = useState<FormObj>(fromObjInit);
-
-  function handleTBChange(e: React.ChangeEvent<HTMLInputElement>, key: string): void {
-    setFromObj({ ...fromObj, [key]: e.target.value });
+  function handleTBChange(
+    e: React.ChangeEvent<HTMLInputElement>,
+    key: string
+  ): void {
+    setFromObj({ ...fromObj, [key]: e.target.value })
   }
 
   function handleDDChange(key: string, item: string): void {
-    setFromObj({ ...fromObj, [key]: item });
+    setFromObj({ ...fromObj, [key]: item })
   }
-
-  // function handleSaveChanges(){
-  //   // props.
-  // }
 
   return (
     <div className="user-profile-container debugON">
-      <ProfilePic profilePicture={profilePicture} backgroudImage={backgroudImage} />
+      <ProfilePic
+        profilePicture={profilePicture}
+        backgroudImage={backgroudImage}
+      />
       <div className="profile-form debug">
-        {/* de adaugat o valuare default care sa fie gri daca campul nu e completat */}
-        <TextBox label="First Name*" type="text" enableHide={false} defaultText="Jennifer" onChange={e => handleTBChange(e, 'firstName')} />
+        <TextBox
+          label="First Name*"
+          type="text"
+          enableHide={false}
+          defaultText="Jennifer"
+          onChange={e => handleTBChange(e, 'firstName')}
+        />
 
         <TextBox
           label="Middle Name*"
@@ -47,9 +51,14 @@ function AccountBodyComponent(props : any): JSX.Element {
           onChange={e => handleTBChange(e, 'middleName')}
         />
 
-        <TextBox label="Last Name*" type="text" enableHide={false} defaultText="Smith" onChange={e => handleTBChange(e, 'lastName')} />
+        <TextBox
+          label="Last Name*"
+          type="text"
+          enableHide={false}
+          defaultText="Smith"
+          onChange={e => handleTBChange(e, 'lastName')}
+        />
 
-        {/* ---------------------------------------------------------- */}
 
         <TextBox
           label="Email*"
@@ -67,9 +76,14 @@ function AccountBodyComponent(props : any): JSX.Element {
           onChange={e => handleTBChange(e, 'phoneNumber')}
         />
 
-        <TextBox label="Fax*" type="text" enableHide={false} defaultText="Enter fax number" onChange={e => handleTBChange(e, 'fax')} />
+        <TextBox
+          label="Fax*"
+          type="text"
+          enableHide={false}
+          defaultText="Enter fax number"
+          onChange={e => handleTBChange(e, 'fax')}
+        />
 
-        {/* ---------------------------------------------------------- */}
 
         <TextBox
           label="Address*"
@@ -79,13 +93,33 @@ function AccountBodyComponent(props : any): JSX.Element {
           onChange={e => handleTBChange(e, 'address')}
         />
 
-        <FormDropDownItem id="cityInput" options={cities} label="City*" defaultText="Jennifer" name="city" onChange={handleDDChange} />
+        <FormDropDownItem
+          id="cityInput"
+          options={cities}
+          label="City*"
+          defaultText="Jennifer"
+          name="city"
+          onChange={handleDDChange}
+        />
 
-        <FormDropDownItem id="stateInput" options={states} label="State*" defaultText="Jennifer" name="state" onChange={handleDDChange} />
+        <FormDropDownItem
+          id="stateInput"
+          options={states}
+          label="State*"
+          defaultText="Jennifer"
+          name="state"
+          onChange={handleDDChange}
+        />
 
         {/* ---------------------------------------------------------- */}
 
-        <TextBox label="Zip Code*" type="text" enableHide={false} defaultText="Jennifer" onChange={e => handleTBChange(e, 'zipCode')} />
+        <TextBox
+          label="Zip Code*"
+          type="text"
+          enableHide={false}
+          defaultText="Jennifer"
+          onChange={e => handleTBChange(e, 'zipCode')}
+        />
 
         <FormDropDownItem
           label="Country*"
@@ -142,19 +176,28 @@ function AccountBodyComponent(props : any): JSX.Element {
 
         {/* <DefaultButtom formObj={fromObj} text="Save Changes" /> */}
         <div className="change-password-button-container">
-          <button className="save-button" onClick={() => props.saveChanges(fromObj)}>Save Changes</button>
+          <button
+            className="save-button"
+            onClick={() => props.saveChanges(fromObj)}
+          >
+            Save Changes
+          </button>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 const mapStateToProps = (state: any) => ({
   ...state
 })
 
-const mapDispatchToProps = (dispatch: any) => ({  dispatch,  ...bindActionCreators({ saveChanges }, dispatch) //? astea sunt ACTIONS
+const mapDispatchToProps = (dispatch: any) => ({
+  dispatch,
+  ...bindActionCreators({ saveChanges }, dispatch) //? astea sunt ACTIONS
 })
 
-export const AccountBody = connect(mapStateToProps, mapDispatchToProps)(AccountBodyComponent)
-
+export const AccountBody = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AccountBodyComponent)

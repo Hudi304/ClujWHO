@@ -20,6 +20,7 @@ import {
   bubbleOptionsArraySaturday,
   bubbleOptionsArraySunday
 } from './scheduler-constants'
+import { Helmet } from 'react-helmet'
 /* eslint-disable */
 
 export function Schedule(props: any): JSX.Element {
@@ -54,11 +55,21 @@ export function Schedule(props: any): JSX.Element {
   useEffect(() => {
     const timer = setTimeout(() => {
       const now = new Date()
+
+      console.log(now.getDate())
+      console.log(now.getMonth())
+
       if (now.getMinutes() % 15 == 0 && now.getSeconds() % 10 == 0) {
-        console.log('dsadas')
-        setSundayBubbleOpt(getSundayBubbleOptions(now))
-        setFridayBubbleOpt(getFridayBubbleOptions(now))
-        setSaturdayBubbleOpt(getSaturdayBubbleOptions(now))
+        if (now.getMonth() > 3) {
+          setSundayBubbleOpt(getSundayBubbleOptions(now))
+          setFridayBubbleOpt(getFridayBubbleOptions(now))
+          setSaturdayBubbleOpt(getSaturdayBubbleOptions(now))
+        }
+        if (now.getDate() > 15) {
+          setFridayBubbleOpt(bubbleOptionsArrayFriday)
+          setSaturdayBubbleOpt(bubbleOptionsArraySaturday)
+          setSundayBubbleOpt(bubbleOptionsArraySunday)
+        }
       }
 
       setTimeLeft(!timeLeft)
@@ -170,8 +181,8 @@ export function Schedule(props: any): JSX.Element {
     return (
       <div className="scheduleComponentContainer ">
         <div className="scheduleOxGrid ">
-          <p className="scheduleTitle " style={{ paddingLeft: '4vh' }}>
-            Saturday
+          <p className="scheduleTitle " style={{ paddingLeft: '6vh' }}>
+            Sunday
           </p>
           <p></p>
           <p></p>
@@ -513,6 +524,13 @@ export function Schedule(props: any): JSX.Element {
   } else {
     return (
       <div>
+        <Helmet>
+          <title>Event Schedule | ClujWHO</title>
+          <meta
+            name="description"
+            content="ClujWHO takes place over three days. Discover the event talksthat will be available and their time and location so you don't miss out on any of them. "
+          />
+        </Helmet>
         <div className="schedulePageContainer ">
           <div className="schedulePageGridContainer">
             <div className="scheduleGridItem">

@@ -3,16 +3,17 @@ import './navbar-component.scss'
 import ClujWhoLogoBar from '../../../../assets/ClujWHOLogoBar.png'
 
 import { useState, useEffect } from 'react'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 
 export function NavBarComponent(props: any): JSX.Element {
   const { inView } = props
 
   const [navBarClasses, setNavBarClasses] = useState('')
-  const history = useHistory()
+  // const history = useHistory()
+  const navigate = useNavigate()
 
   useEffect(() => {
-    console.log('IN VIEW', inView)
     if (inView) {
       setNavBarClasses('')
     } else {
@@ -21,8 +22,7 @@ export function NavBarComponent(props: any): JSX.Element {
   }, [inView])
 
   function redirect(path: string, e: any) {
-    console.log('REDIRECT TO ', path)
-    history.push(path)
+    navigate(path)
   }
 
   if (props.mobile) {
@@ -43,12 +43,12 @@ export function NavBarComponent(props: any): JSX.Element {
                   redirect('/DevClujWho/home', e)
                 }}
               />
-              <NavBarButton
+              {/* <NavBarButton
                 text={'Apply now'}
                 onClick={(e: any) => {
                   redirect('/DevClujWho/apply_now', e)
                 }}
-              />
+              /> */}
               <NavBarButton
                 text={'About us'}
                 onClick={(e: any) => {

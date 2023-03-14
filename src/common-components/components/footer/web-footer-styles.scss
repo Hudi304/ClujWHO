@@ -1,0 +1,114 @@
+.web-footer-grid {
+  display: grid;
+  grid-template-rows: auto auto;
+
+  .web-footer-waves-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100vw;
+    background-color: #1a202c;
+  }
+
+  .web-footer {
+    grid-column: 1;
+    grid-row: 7;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    padding-bottom: 2vw;
+    background-color: #aedfff;
+
+    .web-footer-waves-container {
+      width: 100vw;
+    }
+
+    .web-facebook-insta-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5vw;
+
+      .web-facebook-icon-container {
+        width: 10vh;
+        height: 10vh;
+        background-color: aliceblue;
+        z-index: 7;
+        cursor: pointer;
+
+        .web-anchor {
+          z-index: 7;
+          width: 10vh;
+          height: 10vh;
+          cursor: pointer;
+
+
+          .web-anchor-button {
+            width: 10vh;
+            height: 10vh;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+
+          }
+        }
+      }
+
+      .web-instagram-icon-container {
+        width: 10vh;
+        height: 10vh;
+        z-index: 8;
+        cursor: pointer;
+
+
+        .web-anchor-insta {
+          z-index: 8;
+          width: 10vh;
+          height: 10vh;
+          cursor: pointer;
+
+
+          .web-anchor-button-insta {
+            width: 10vh;
+            height: 10vh;
+            border: none;
+            padding: 0;
+            background-color: transparent;
+            cursor: pointer;
+
+          }
+        }
+      }
+    }
+
+    .web-email-container {
+      display: flex;
+      justify-content: center;
+      gap: 2vw;
+
+      .web-email-icon-container {
+        width: 10vh;
+        height: 10vh;
+      }
+
+      .web-email {
+        padding: 0;
+        margin: 0;
+        color: #17a0df;
+        display: flex;
+        align-items: center;
+        font-size: 2vh;
+      }
+    }
+
+    .web-osm-logo-container {
+      width: 20vh;
+
+      .web-osm-logo {
+        width: 20vh;
+      }
+    }
+  }
+}
